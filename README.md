@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-12-07 18:47:33
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-12-07 19:09:44
+ * @LastEditTime: 2022-12-07 19:25:48
  * @Description: 
 -->
 
@@ -10,7 +10,7 @@
   <img src='./logo.svg' width="100" />
 </p>
 
-<h1 align="center">Obsidian Plugin Generator</p>
+<h1 align="center">Obsidian Plugin Generator</h1>
 
 <p align="center">For generating the obsidian plugin project.</p>
 
