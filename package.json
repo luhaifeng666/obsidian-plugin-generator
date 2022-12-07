@@ -8,8 +8,8 @@
     "opg": "index.js"
   },
   "scripts": {
-    "pub:beta": "npm publish --tag beta",
-    "pub": "npm publish --beta"
+    "pub": "npm publish",
+		"pub:beta": "npm publish --tag beta"
   },
   "keywords": [
     "obsidian",
@@ -22,6 +22,9 @@
     "inquirer": "^9.1.4",
     "zx": "^7.1.1"
   },
+  "publishConfig": {
+		"registry": "https://registry.npmjs.org/"
+	},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luhaifeng666/obsidian-plugin-generator.git"
