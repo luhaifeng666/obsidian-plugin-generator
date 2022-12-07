@@ -1,6 +1,6 @@
 {
   "name": "obsidian-plugin-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "For obsidian plugin project generating.",
   "main": "index.js",
   "type": "module",
@@ -17,7 +17,7 @@
   ],
   "author": "luhaifeng666",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "commander": "^9.4.1",
     "inquirer": "^9.1.4",
     "zx": "^7.1.1"
