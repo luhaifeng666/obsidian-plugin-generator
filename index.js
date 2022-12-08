@@ -3,8 +3,8 @@
 /*
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-12-07 16:17:52
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-12-08 10:36:50
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-12-08 21:15:39
  * @Description: 
  */
 
@@ -28,14 +28,21 @@ const SETTING_KEYS = [
   { key: 'fundingUrl', required: false },
   { key: 'isDesktopOnly', required: false, defaultValue: false },
 ]
+const REPO_LINK = {
+  ssh: 'git@github.com:obsidianmd/obsidian-sample-plugin.git',
+  https: 'https://github.com/obsidianmd/obsidian-sample-plugin.git'
+}
 const commander = new Command()
 
 commander.version(getPackageContent().version, '-v, --version')
   .option('-i, --init', 'init an obsidian plugin project')
+  .option('-H, --https', `clone the obsidian-sample-plugin from ${REPO_LINK.https}`)
 
 commander.parse(process.argv)
 
-if (commander.opts().init) {
+const { init, https } = commander.opts()
+
+if (init) {
   inquirer.prompt(SETTING_KEYS.map(({ key, required, defaultValue = '' }) => ({
     type: 'input',
     name: key,
@@ -51,7 +58,7 @@ if (commander.opts().init) {
     default: defaultValue !== '' ?  defaultValue : null
   }))).then(async answers => {
     const { id, version, description, author, authorUrl } = answers
-    await $`git clone git@github.com:obsidianmd/obsidian-sample-plugin.git ${id}`
+    await $`git clone ${REPO_LINK[https ? 'https' : 'ssh']} ${id}`
     // init manifest.json
     await writeFile(
       path.resolve(process.env.PWD, id, 'manifest.json'),
@@ -76,6 +83,9 @@ if (commander.opts().init) {
 Initialization completed!
 
 run 'cd ${id} && npm i' to start~
+
+Chinese help docs: https://luhaifeng666.github.io/obsidian-plugin-docs-zh/zh2.0/
+English help docs: https://marcus.se.net/obsidian-plugin-docs/
 
 Enjoy :)
     `))

@@ -1,8 +1,8 @@
 <!--
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-12-07 18:47:33
- * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-12-08 10:37:00
+ * @LastEditors: haifeng.lu
+ * @LastEditTime: 2022-12-08 21:16:01
  * @Description: 
 -->
 
@@ -15,7 +15,7 @@
 <p align="center">For generating the obsidian plugin project.</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/obsidian--plugin--generator-v1.0.3-orange" />
+  <img src="https://img.shields.io/badge/obsidian--plugin--generator-v1.0.4-orange" />
 </p>
 
 ## Install
@@ -32,6 +32,7 @@ Usage: opg [options]
 Options:
   -v, --version  output the version number
   -i, --init     init an obsidian plugin project
+  -H, --https    clone the obsidian-sample-plugin from https://github.com/obsidianmd/obsidian-sample-plugin.git.
   -h, --help     display help for command
 ```
 

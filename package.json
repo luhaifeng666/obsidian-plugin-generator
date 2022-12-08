@@ -1,6 +1,6 @@
 {
   "name": "obsidian-plugin-generator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "For obsidian plugin project generating.",
   "main": "index.js",
   "type": "module",
