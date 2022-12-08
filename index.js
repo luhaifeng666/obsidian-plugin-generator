@@ -4,7 +4,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-12-07 16:17:52
  * @LastEditors: haifeng.lu
- * @LastEditTime: 2022-12-08 21:15:39
+ * @LastEditTime: 2022-12-09 00:38:33
  * @Description: 
  */
 
@@ -32,6 +32,7 @@ const REPO_LINK = {
   ssh: 'git@github.com:obsidianmd/obsidian-sample-plugin.git',
   https: 'https://github.com/obsidianmd/obsidian-sample-plugin.git'
 }
+const BASE_URL = process.env.PWD || process.cwd()
 const commander = new Command()
 
 commander.version(getPackageContent().version, '-v, --version')
@@ -61,14 +62,14 @@ if (init) {
     await $`git clone ${REPO_LINK[https ? 'https' : 'ssh']} ${id}`
     // init manifest.json
     await writeFile(
-      path.resolve(process.env.PWD, id, 'manifest.json'),
+      path.resolve(BASE_URL, id, 'manifest.json'),
       JSON.stringify(answers, null, 2)).catch(err => console.error(chalk.red(err.message))
     );
     // init package.json
     await writeFile(
-      path.resolve(process.env.PWD, id, 'package.json'),
+      path.resolve(BASE_URL, id, 'package.json'),
       JSON.stringify({
-        ...getPackageContent(path.resolve(process.env.PWD, id, 'package.json'),),
+        ...getPackageContent(path.resolve(BASE_URL, id, 'package.json'),),
         name: id,
         homepage: authorUrl,
         version, description, author
