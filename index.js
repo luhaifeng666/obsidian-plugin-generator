@@ -4,7 +4,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-12-07 16:17:52
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-12-07 19:04:03
+ * @LastEditTime: 2022-12-08 10:36:50
  * @Description: 
  */
 
@@ -70,9 +70,15 @@ if (commander.opts().init) {
 
     console.log(chalk.blue('Generating...'))
 
-    await $`cd ${id} && rm -rf .git && git init && npm i`
+    await $`cd ${id} && rm -rf .git && git init`
 
-    console.log(chalk.green('Initialization completed!'))
+    console.log(chalk.green(`
+Initialization completed!
+
+run 'cd ${id} && npm i' to start~
+
+Enjoy :)
+    `))
 	}).catch(err => {
 		console.error(chalk.red(err))
 	})

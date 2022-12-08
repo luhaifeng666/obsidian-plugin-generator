@@ -2,7 +2,7 @@
  * @Author: luhaifeng666 youzui@hotmail.com
  * @Date: 2022-12-07 18:47:33
  * @LastEditors: luhaifeng666
- * @LastEditTime: 2022-12-07 22:11:24
+ * @LastEditTime: 2022-12-08 10:37:00
  * @Description: 
 -->
 
@@ -15,7 +15,7 @@
 <p align="center">For generating the obsidian plugin project.</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/obsidian--plugin--generator-v1.0.1-orange" />
+  <img src="https://img.shields.io/badge/obsidian--plugin--generator-v1.0.3-orange" />
 </p>
 
 ## Install
